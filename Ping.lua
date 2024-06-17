@@ -1,13 +1,12 @@
-
 function Notify(...)
-    local V1 = {...};
+    V1 = {...};
     spawn(function()
-        local V2 = game.CoreGui:FindFirstChild("Notification");
+        V2 = game.CoreGui:FindFirstChild("Notification");
         if V2 then
             V2:Destroy();
         end
         
-        local V3 = Instance.new("ScreenGui");
+        V3 = Instance.new("ScreenGui");
         V3.Name = "Notification";
         V3.Parent = game.CoreGui;
 
@@ -15,7 +14,7 @@ function Notify(...)
             protect_gui(V3);
         end
         
-        local V4 = Instance.new("TextLabel", V3);
+        V4 = Instance.new("TextLabel", V3);
         V4.Text = V1[1];
         V4.Size = UDim2.new(0, 200, 0, 50);
         V4.Position = UDim2.new(0.5, -100, 1, -50);
@@ -36,8 +35,8 @@ function Notify(...)
 end;
 
 function Sound(...)
-    local V1 = {...};
-    local V2 = Instance.new("Sound");
+    V1 = {...};
+    V2 = Instance.new("Sound");
     V2.SoundId = "rbxassetid://" .. V1[1];
     V2.Parent = game.CoreGui;
     V2.Volume = V1[2];
